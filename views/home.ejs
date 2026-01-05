@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Users</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <div class="container my-4">
+  <!-- HEADER -->
+  <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
+    <h1 class="mb-2">All Users</h1>
+    <form action="/instagram/new" class="Btn">
+      <button>Add new User +</button>
+    </form>
+  </div>
+
+  <hr>
+
+  <!-- USERS  -->
+  <div class="row g-4">
+    <% for(user of instaUsers) { %>
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+        <div class="instauser p-3 h-100">
+
+          <div class="d-flex justify-content-between align-items-start mb-2">
+            <h4 class="mb-0"><%= user.name %></h4>
+            <form action="/instagram/<%= user.userId %>/edit">
+              <button class="editBtn">Edit </button>
+            </form>
+          </div>
+
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <img src="<%= user.Img %>" alt="User" class="rounded-circle" width="70" height="70">
+            <h6 class="mb-0">@<%= user.username %></h6>
+          </div>
+
+          <div class="mb-3 p-2 rounded statsBox fs-5">
+          <span class="followersText">
+            Followers: <%= user.followers %>
+          </span>
+          &nbsp;&nbsp;&nbsp;
+          <span class="followingText">
+            Following: <%= user.following %>
+          </span>
+        </div>
+
+          <p class="mb-3"><%= user.bio %></p>
+
+          <div class="lowerBtns">
+  <div class="btnRow">
+    <form action="/instagram/<%= user.userId %>/follow" method="POST" id="FollowButton">
+      <button type="submit" class="followBtn w-100">
+        <%= user.isFollow ? "Following" : "Follow" %>
+      </button>
+    </form>
+
+    <form action="/instagram/<%= user.userId %>/msg">
+      <button class="w-100">Message</button>
+    </form>
+  </div>
+
+  <div class="btnRow mt-2">
+    <form action="/instagram/<%= user.userId %>">
+      <button class="w-100">See in Details</button>
+    </form>
+
+    <form action="/instagram/<%= user.userId %>?_method=DELETE" method="POST">
+      <button class="w-100">Delete</button>
+    </form>
+  </div>
+</div>
+
+
+        </div>
+      </div>
+    <% } %>
+  </div>
+</div>
+
+</html>
