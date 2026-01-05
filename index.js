@@ -59,24 +59,24 @@ let instaUsers = [
 
 
 // Index Route
-app.get("/instagram", (req,res) => {
+app.get("/", (req,res) => {
     res.render("home.ejs", { instaUsers })
 })
 
 //Add new user
-app.get("/instagram/new",(req,res) => {
+app.get("/new",(req,res) => {
     res.render("new.ejs")
 })
 
-app.post("/instagram", (req,res) => {
+app.post("/", (req,res) => {
     let {name,username,bio,Img,followers,following} = req.body;
     let userId = uuidv4();
     instaUsers.push({userId,name,username,bio,Img,followers:Number(followers),following:Number(followers)})
-    res.redirect("/instagram")
+    res.redirect("/")
 })
 
 // Edit Profile
-app.get("/instagram/:id/edit",(req,res) =>{
+app.get("/:id/edit",(req,res) =>{
     let {id} = req.params
     let User = instaUsers.find((i) => i.userId === id)
     if(!User){
@@ -85,19 +85,19 @@ app.get("/instagram/:id/edit",(req,res) =>{
     res.render("Edit.ejs", {User})
 })
 
-app.patch("/instagram/:id", (req,res) => {
+app.patch("/:id", (req,res) => {
     let {id} = req.params;
     let updatedUserProfile = req.body.bio
     let userData = instaUsers.find((i) => i.userId === id) 
     userData.bio = updatedUserProfile;
     userData.followers = req.body.followers;
     userData.following = req.body.following;
-    res.redirect("/instagram")
+    res.redirect("/")
 })
 
 
 // Show user
-app.get("/instagram/:id",(req,res) => {
+app.get("/:id",(req,res) => {
     let {id} = req.params;
     let user = instaUsers.find((u) => u.userId === id)
     if(!user){
@@ -107,14 +107,14 @@ app.get("/instagram/:id",(req,res) => {
 })
 
 // Destroy User
-app.delete("/instagram/:id",(req,res) => {
+app.delete("/:id",(req,res) => {
     let {id} = req.params;
     instaUsers = instaUsers.filter((u) => u.userId !== id)
-    res.redirect("/instagram")
+    res.redirect("/")
 })
 
 // Send Message
-app.get("/instagram/:id/msg",(req,res) => {
+app.get("/:id/msg",(req,res) => {
     let {id} = req.params;
     let user = instaUsers.find((u) => u.userId === id)
     if(!user){
@@ -123,7 +123,7 @@ app.get("/instagram/:id/msg",(req,res) => {
     res.render("Message.ejs",{user})
 })
 
-app.post("/instagram/:id/sent",(req,res) => {
+app.post("/:id/sent",(req,res) => {
     let {id} = req.params;
     let {message} = req.body
     let user = instaUsers.find((u) => u.userId === id)
@@ -131,7 +131,7 @@ app.post("/instagram/:id/sent",(req,res) => {
 })
 
 //Follow User
-app.post("/instagram/:id/follow",(req,res) => {
+app.post("/:id/follow",(req,res) => {
     let {id} = req.params;
     let user = instaUsers.find((u) => u.userId === id)
     if(!user){
@@ -144,7 +144,7 @@ app.post("/instagram/:id/follow",(req,res) => {
         user.followers += 1
         user.isFollow = true
     }
-    res.redirect(`/instagram`)
+    res.redirect(`/`)
 })
 
 app.use((req,res) => {

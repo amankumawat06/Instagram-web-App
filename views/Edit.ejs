@@ -11,7 +11,7 @@
     <div class="card-box">
       <h3>Edit Your Profile</h3>
 <hr>
-      <form action="/instagram/<%= User.userId %>?_method=PATCH" method="POST">
+      <form action="/<%= User.userId %>?_method=PATCH" method="POST">
         <p><b>ID:</b> <%= User.userId %></p>
         <p><b>Username:</b> @<%= User.username %></p>
         <input type="number" placeholder="Followers" name="followers" value="<%= User.followers %>">
@@ -20,7 +20,7 @@
         <br><br>
         <button>Save Changes</button>
       </form>
-      <form action="/instagram">
+      <form action="/">
         <button style="margin-top: 10px;">← Back</button>
       </form>
     </div>

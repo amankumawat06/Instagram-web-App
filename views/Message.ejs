@@ -33,12 +33,12 @@
     <div class="card-box">
       <h3>Send message to @<%= user.username %></h3>
 
-      <form action="/instagram/<%= user.userId %>/sent" method="POST">
+      <form action="/<%= user.userId %>/sent" method="POST">
         <textarea name="message" rows="6" placeholder="Write message..."></textarea>
         <br><br>
         <button>Send Message</button>
       </form>
-      <form action="/instagram">
+      <form action="/">
         <button class="mt-2">← Back</button>
       </form>
     </div>
