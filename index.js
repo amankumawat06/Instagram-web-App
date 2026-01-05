@@ -60,7 +60,7 @@ let instaUsers = [
 
 // Index Route
 app.get("/instagram", (req,res) => {
-    res.render("Home.ejs", { instaUsers })
+    res.render("home.ejs", { instaUsers })
 })
 
 //Add new user
