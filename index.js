@@ -71,7 +71,7 @@ app.get("/new",(req,res) => {
 app.post("/", (req,res) => {
     let {name,username,bio,Img,followers,following} = req.body;
     let userId = uuidv4();
-    instaUsers.push({userId,name,username,bio,Img,followers:Number(followers),following:Number(followers)})
+    instaUsers.push({userId,name,username,bio,Img,followers:Number(followers),following:Number(following)})
     res.redirect("/")
 })
 
