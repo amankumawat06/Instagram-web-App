@@ -8,7 +8,7 @@
     <div
       class="d-flex justify-content-between align-items-center mb-3 flex-wrap"
     >
-      <h1 class="mb-2">All Users</h1>
+      <h1 class="mb-2 aluse">All Users</h1>
       <form action="/new" class="Btn">
         <button>Add new User +</button>
       </form>
@@ -43,7 +43,7 @@
             <span class="followersText">
               Followers: <%= user.followers %>
             </span>
-            &nbsp;&nbsp;&nbsp;
+            <span class="followSpace">&nbsp;&nbsp;&nbsp;</span>
             <span class="followingText">
               Following: <%= user.following %>
             </span>
@@ -70,11 +70,11 @@
 
             <div class="btnRow mt-2">
               <form action="/<%= user._id %>">
-                <button class="w-100">See in Details</button>
+                <button class="w-100 sbs">See in Details</button>
               </form>
 
-              <form action="/<%= user._id %>?_method=DELETE" method="POST">
-                <button class="w-100">Delete</button>
+              <form action="/<%= user._id %>?_method=DELETE" method="POST" class="deleteForm">
+                <button class="w-100 deleteBtn">Delete</button>
               </form>
             </div>
           </div>
@@ -84,5 +84,18 @@
     </div>
   </div>
 
+  <!-- Delete Confirmation Modal -->
+<div id="deleteModal" class="modal-overlay hidden">
+  <div class="modal-box">
+    <h4>Delete Confirmation!</h4>
 
+    <div class="modal-actions">
+      <button id="cancelDelete" class="modal-cancel">Cancel</button>
+      <button id="confirmDelete" class="modal-delete">Delete</button>
+    </div>
+  </div>
+</div>
+
+
+<script src="/JS/script.js"></script>
  </body>

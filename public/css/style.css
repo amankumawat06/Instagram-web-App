@@ -188,6 +188,15 @@ button:hover {
   font-weight: 600;
 }
 
+@media (max-width:393px) {
+  .statsBox span{
+    display: flex;
+  }
+  .followSpace{
+    display: none !important;
+  }
+}
+
 /* Remove Up and down arrow from Input */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
@@ -273,4 +282,75 @@ input[type="number"]::-webkit-outer-spin-button {
   .follow-row input {
     width: 100%;
   }
+}
+
+
+/* Delete Confirmation Model */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-box {
+  background: #1f1f1f;
+  color: #fff;
+  padding: 45px 30px;
+  border-radius: 12px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(80, 79, 79, 0.4);
+}
+
+.modal-box h4 {
+  margin-bottom: 10px;
+}
+
+.modal-box p {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top:40px ;
+}
+
+.modal-cancel {
+  flex: 1;
+  background: #444;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.modal-delete {
+  flex: 1;
+  background: #e63946;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.modal-overlay {
+  backdrop-filter: blur(4px);
 }
