@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>All Users</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="/style.css" />
-  </head>
+<%- include("./includes/Head.ejs") %>
+
+  <title>All Users</title>
+
 <body>
   <div class="container my-4">
     <!-- HEADER -->
@@ -33,7 +23,7 @@
         <div class="instauser p-3 h-100">
           <div class="d-flex justify-content-between align-items-start mb-2">
             <h4 class="mb-0"><%= user.name %></h4>
-            <form action="/<%= user.userId %>/edit">
+            <form action="/<%= user._id %>/edit">
               <button class="editBtn">Edit</button>
             </form>
           </div>
@@ -64,7 +54,7 @@
           <div class="lowerBtns">
             <div class="btnRow">
               <form
-                action="/<%= user.userId %>/follow"
+                action="/<%= user._id %>/follow"
                 method="POST"
                 id="FollowButton"
               >
@@ -73,17 +63,17 @@
                 </button>
               </form>
 
-              <form action="/<%= user.userId %>/msg">
+              <form action="/<%= user._id %>/msg">
                 <button class="w-100">Message</button>
               </form>
             </div>
 
             <div class="btnRow mt-2">
-              <form action="/<%= user.userId %>">
+              <form action="/<%= user._id %>">
                 <button class="w-100">See in Details</button>
               </form>
 
-              <form action="/<%= user.userId %>?_method=DELETE" method="POST">
+              <form action="/<%= user._id %>?_method=DELETE" method="POST">
                 <button class="w-100">Delete</button>
               </form>
             </div>
@@ -94,9 +84,5 @@
     </div>
   </div>
 
-  <div class="container errorBox mt-5">
-    <p class="error-text fs-6">⚠️NOTE- The Image upload section is still under development.Therefore, you can leave the Image path input field empty when creating a new user.</p>
-  </div>
 
  </body>
-</html>

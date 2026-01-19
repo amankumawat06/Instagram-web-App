@@ -1,7 +1,18 @@
-let FollowButton = document.querySelectorAll("#FollowButton")
+let form = document.querySelector("form")
+let createBtn = document.querySelector("#creatUserbtn")
 
-for(let follow of FollowButton){
-    follow.addEventListener("click", (e) => {
-        e.preventDefault()
-    })
-}
+form.addEventListener("submit",() =>{
+    createBtn.innerText = "Creating user...";
+    createBtn.disabled = true;
+    createBtn.classList.add("create")
+})
+
+// Show selected file name
+const fileInput = document.getElementById("fileInput");
+const fileName = document.getElementById("fileName");
+
+fileInput.addEventListener("change", () => {
+  fileName.innerText = fileInput.files[0]
+    ? fileInput.files[0].name
+    : "No file chosen";
+});

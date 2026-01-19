@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
@@ -11,9 +11,14 @@
   "description": "",
   "dependencies": {
     "bootstrap": "^5.3.8",
+    "cloudinary": "^2.8.0",
+    "dotenv": "^17.2.3",
     "ejs": "^3.1.10",
     "express": "^5.2.1",
     "method-override": "^3.0.0",
+    "mongoose": "^9.1.4",
+    "multer": "^2.0.2",
+    "multer-storage-cloudinary": "^4.0.0",
     "path": "^0.12.7",
     "uuid": "^13.0.0"
   }

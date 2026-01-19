@@ -1,22 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%- include("./includes/Head.ejs") %>
+
     <title>Edit Your Profile</title>
-    <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
   <div class="page-center">
     <div class="card-box">
       <h3>Edit Your Profile</h3>
 <hr>
-      <form action="/<%= User.userId %>?_method=PATCH" method="POST">
-        <p><b>ID:</b> <%= User.userId %></p>
-        <p><b>Username:</b> @<%= User.username %></p>
-        <input type="number" placeholder="Followers" name="followers" value="<%= User.followers %>">
-        <input type="number" placeholder="Following`" name="following" value="<%= User.following %>" style="margin: 10px 0;">
-        <textarea name="bio" rows="6"><%= User.bio %></textarea>
+      <form action="/<%= user._id %>?_method=PATCH" method="POST">
+        <p><b>ID:</b> <%= user._id %></p>
+        <p><b>Username:</b> @<%= user.username %></p>
+        <input type="number" placeholder="Followers" name="followers" value="<%= user.followers %>">
+        <input type="number" placeholder="Following`" name="following" value="<%= user.following %>" style="margin: 10px 0;">
+        <textarea name="bio" rows="6"><%= user.bio %></textarea>user
         <br><br>
         <button>Save Changes</button>
       </form>
@@ -26,5 +22,3 @@
     </div>
   </div>
 </body>
-
-</html>

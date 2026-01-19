@@ -1,21 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Show file</title>
-    <link rel="stylesheet" href="/style.css" />
-    <style>
-        img{
-            height: 170px !important;
-            width: 170px !important;
-            border-radius: 10px !important;
-        }
-    </style>
-</head> 
+<%- include("./includes/Head.ejs") %>
+
+  <title>Show User Profile</title>
+
+
 <body>
   <div class="page-center">
-    <div class="card-box text-center">
+    <div class="card-box text-start">
       <h3>User Details</h3>
 <hr>
       <p><b>Name :</b> <%= user.name %></p>
@@ -30,5 +20,3 @@
     </div>
   </div>
 </body>
-
-</html>
