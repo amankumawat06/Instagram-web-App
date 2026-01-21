@@ -354,3 +354,20 @@ input[type="number"]::-webkit-outer-spin-button {
 .modal-overlay {
   backdrop-filter: blur(4px);
 }
+
+.warning-box {
+  display: flex;
+  align-items: center !important;
+  gap: 8px;
+  background-color: #fafafa;
+  border-left: 4px solid #ffcc00;
+  color: #555;
+  padding: 15px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-top: 15px;
+}
+
+.warning-box p{
+  margin: 0;
+}
