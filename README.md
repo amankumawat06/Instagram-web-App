@@ -1,10 +1,12 @@
-#About the projet📸
+**About the projet**📸
 
 This is a Instagram like backend application where user can intreact with each other
 
-These are the some features,
+##
 
- ✨Freatures -
+**These are the features-**
+ 
+ ✨**Freatures-** 
  
    •󠁏󠁏 Add a new user 
    
@@ -20,12 +22,15 @@ These are the some features,
    
    •󠁏󠁏 Upload profile picture
 
-  #Visit the below link to see 🌍 live updates -
+##
+
+  **Visit the below link to see 🌍 live updates-**
   
   🔗 https://instagram-web-app-1.onrender.com/
 
+##
 
-  Tech Stack used in the project -
+  **Tech Stack used in the project-**
   
   🟢 Node.Js     
   
@@ -43,8 +48,9 @@ These are the some features,
   
   ⭐ Fontawsome
 
+##
 
-#How to run the project locally⚙️
+**How to run the project locally⚙️**
 
 Make sure you have Installed these tools in your VS Code to run the projecy locally
 
@@ -56,23 +62,31 @@ Make sure you have Installed these tools in your VS Code to run the projecy loca
  
  •󠁏󠁏 VS Code
 
-#Step 1 - Clone the Repository 
+##
+
+**Step 1** - Clone the Repository 
 
 Command - git clone https://github.com/amankumawat06/Instagram-web-App.git
 
-⿻Copy the above command and 📌paste it on your VS Code Terminal inside an empty folder
+⿻ Copy the above command and 📌paste it on your VS Code Terminal inside an empty folder
 
-#Step 2 - Install Dependencies 
+##
+
+**Step 2** - Install Dependencies 
 
 Run command in Terminal - npm install 
 
-|⚠️Make sure you are inside the Instagram-web-App folder
+⚠️Make sure you are inside the Instagram-web-App folder
 
-#Step 3 - Start the Server
+##
+
+**Step 3** - Start the Server
 
 ▶️ Run command - npm start
 
-#Step 4 - Open browser🌐 
+##
+
+**Step 4** - Open browser🌐 
 
 Visit - http://localhost:8080/
 
